@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/main.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="mainmenu">
+	<div data-role="main" class="ui-content">
+		<h2>Virtual Climate Adaptation Library</h2>
+	</div>
+	
+	<div data-role ="content">
+		<ul data-role="listview" id ="menulist" data-inset="true">
+		</ul>
+	</div>
+</div> 
+
+<div data-role="page" id="browse" data-dom-cache = "false">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous">
+		<h2>Region</h2>
+	</div>
+	
+	<div data-role ="content">
+		<ul data-role="listview" id ="regionlist">
+		</ul>
+	</div>
+</div> 
+
+
+<div data-role="page" id="subregions" data-dom-cache = "false">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous">
+		<h2>Subregion</h2>
+	</div>
+	
+	<div data-role ="content">
+		<ul data-role="listview" id ="subregionList" class="list">
+		</ul>
+	</div>
+</div> 
+
+<div data-role="page" id="documents" data-dom-cache = "false">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous">
+		<h2>Documents</h2>
+	</div>
+	
+	<div data-role ="content">
+		<ul data-role="listview" id ="documentsList" class="list">
+		</ul>
+	</div>
+</div> 
+
+
+<div data-role="page" id="pdfdetails">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous">
+		<h2>Document Details</h2>
+	</div>
+	
+	<div data-role ="content" id = "pdfcontent" class = "text">
+		<ul data-role="listview" id ="detailsList" class="list">
+		</ul>
+	</div> 
+	<div data-role ="content" id = "buttons" class = "buttons">
+	</div> 
+	
+	<div data-role="collapsible" id="abstract" data-collapsed="true" data-collapsed-icon="arrow-l" data-expanded-icon="arrow-d" data-iconpos="right">
+        <h3>Abstract</h3>
+		<p id = "abstracttext" class = "abs" >
+		</p>
+    </div>
+</div>
+
+<div data-role="page" id="about">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous"> 
+		<h2>About</h2>
+	</div>
+	<div data-role ="content" id = "abouttext" class = "text">
+	</div>
+</div> 
+</body>
+</html>
