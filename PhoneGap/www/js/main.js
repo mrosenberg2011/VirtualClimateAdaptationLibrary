@@ -158,6 +158,9 @@ $(document).on("pagebeforeshow", "#about", function () {
 						"<p>Michael Barber</p>" +
 						"<p>Michael Rosenberg</p>" +
 						"<p>Cesar Reveron</p>" +
+						"<p></p>" +
+						"<u><p>Client:</u> Dr. Ken Lindeman</p>" +
+						"<u><p>Faculty Sponsor:</u> Dr. Keith Gallagher</p>" +
 						"</font></font></center>";
 	$("#abouttext").append(text);
     

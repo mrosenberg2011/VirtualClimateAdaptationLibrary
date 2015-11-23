@@ -1,0 +1,126 @@
+FL 1
+	East Coast Mainland
+	Florida Keys
+	Gulf Coast
+	Statewide - Florida
+	
+EC 2
+	Carolinas & Georgia
+	Maryland, Virginia, Delaware
+	New England
+	New York & New Jersey
+	Regional - East Coast
+	
+GC 3
+	Louisiana
+	Mississippi & Alabama
+	Texas
+	Regional - Gulf Coast
+	
+WC & H 4 
+	Alska
+	California - Bay Area
+	California - Central
+	California - Northern
+	California - Southern
+	California - Statewide
+	Hawaii
+	Washington & Oregon
+	
+National 5 
+	GCCRP, NCA & CCSP Reports
+	US - EPA reports
+	US - Great Lakes
+	US - Heinz Center & NWF Reports
+	US - NOAA, NAS, NRC Reports
+	US - Pew Climate Center - C2ES Reports
+	US - Other National Reports
+	
+Canada 6 
+	Atlantic
+	Pacific
+	National & Arctic
+	
+LA 7 
+	Bahamas, Bermuda, Turks & Caicos
+	Cuba, Hispanola, Jamaica
+	Easter Carib. & Dutch Antilles
+	Puerto Rico, USVI, BVI
+	Regional - Caribbean
+	Centeral America
+	Brazil, Uruguay, Argentina
+	Chile, Peru, Ecuador
+	Guyana, Suriname, Fr. Guiana
+	Mexico
+	Venezuela & Colombia
+	Regional - Latin Am. & Caribbean
+	
+Europe 8 
+	Balkan Peninsula, Cyprus
+	France
+	Italy
+	Germany
+	Russia, Ukraine, Georgia
+	Spain & Portugal
+	Turkey
+	United Kingdom
+	Regional - Europe
+	Baltic States
+	Scandinavia
+	Netherlands
+	
+Africa 9 
+	East Africa
+	Egypt & Libya
+	Morocco, Algeria, Tunisia
+	South Africa
+	West Africa
+	Regional - Africa
+	
+Me 10 
+	Arabian Peninsula
+	Iran & Iraq
+	Israel, Lebanon, Sryia, & Jordan
+	Regional - Middle East
+	
+AIO 11
+	Bangladesh
+	China
+	India & Sri Lanka
+	Indian Ocean Islands
+	Japan
+	Pakistan
+	South Korea, North Korea
+	Southeast Asia & Philipines
+	Regional - Asia
+	
+ANZ 12
+	NSW, Victoria, ACT
+	Queensland, GBR, N. Territory
+	Western & Soyther Australia
+	Australia National
+	New Zealand
+	
+PI 13
+	Polynesia
+	Melanesia
+	Micronesia
+	Regional - Pacific Islands
+
+Global 14
+	Antarctica
+	IIED Reports
+	IPCC Reports
+	IUCN Reports
+	UN, UNEP, UNESCO, UNDP Regional
+	World Bank Reports
+	Global Reports
+	
+CC 15
+	Messaging Climate Change
+	Psychology & Behavior
+	Youth, Climate & Social Media
+	
+	
+	
+	
