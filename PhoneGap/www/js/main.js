@@ -15,7 +15,7 @@ $(document).on("pageinit", "#mainmenu", function () {
         //meaning I'm adding to the existing data. not replacing it.
         //store index value in array as id of the <a> tag
         li += '<li><a href="#browse" id="browse" class="view">Browse</a></li>' +
-				'<li><a href="#" id="search" class="view">Search</a></li>' +
+				'<li><a href="#search" id="search" class="view">Search</a></li>' +
 				'<li><a href="#" id="favorites" class="view">Favorites</a></li>' +
 				'<li><a href="#" id="rss" class="view">RSS feed</a></li>' +
 				'<li><a href="#about" id="about" class="view">About</a></li>';
@@ -214,6 +214,3 @@ $(document).on("pagebeforeshow", "#pdfdetails", function () {
 		}
 	});
 });
-
-
-
