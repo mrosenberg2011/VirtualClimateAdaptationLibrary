@@ -83,12 +83,17 @@
 
 <!-- Info here http://www.textfixer.com/tutorials/html-search-box.php -->
 <div data-role="page" id="search" data-dom-cache = "false">
-	<h3> </h3>
-	<input type="text" id="test" name="test"><input type="button" value="search" onclick ="mf()">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous"> 
+		<h2> </h2>
+	</div>
+	
+	<input type="text" id="SearchBoxText" name="SearchBoxText"><input type="button" value="Search the Database" onclick ="getBoxInfo()">
+	
+	<p><b><u>Information entered into search box </u></b></p>
+	<p id="Typed"> </p>
 	<SCRIPT>
-		function mf(){
-			var money = document.getElementById("test").value;
-			document.write("You searched for: " + money);
+		function getBoxInfo(){
+			document.getElementById("Typed").innerHTML = document.getElementById("SearchBoxText").value;
 		}
 	</SCRIPT>	
 	
