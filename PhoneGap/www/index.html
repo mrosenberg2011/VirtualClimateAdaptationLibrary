@@ -81,22 +81,39 @@
 	</div>
 </div> 
 
-<!-- Info here http://www.textfixer.com/tutorials/html-search-box.php -->
 <div data-role="page" id="search" data-dom-cache = "false">
 	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous"> 
 		<h2> </h2>
+	</div>	
+	
+	<div data-role ="content">
+		<ul data-role="listview" id ="searchlist" data-inset="true">
+		</ul>
 	</div>
-	
+</div>
+
+<!-- Info here http://www.textfixer.com/tutorials/html-search-box.php -->
+<div data-role="page" id="basicSearch" data-dom-cache = "false">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous"> 
+		<h2>Basic Search</h2>
+	</div>	
+
 	<input type="text" id="SearchBoxText" name="SearchBoxText"><input type="button" value="Search the Database" onclick ="getBoxInfo()">
-	
-	<p><b><u>Information entered into search box </u></b></p>
+		
+	<p><b><u>Information entered into search box: </u></b></p>
 	<p id="Typed"> </p>
+	
 	<SCRIPT>
 		function getBoxInfo(){
 			document.getElementById("Typed").innerHTML = document.getElementById("SearchBoxText").value;
 		}
-	</SCRIPT>	
-	
+	</SCRIPT>		
+</div>
+
+<div data-role="page" id="advancedSearch" data-dom-cache = "false">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous"> 
+		<h2>Advanced Search</h2>
+	</div>	
 </div>
 
 </body>
