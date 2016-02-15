@@ -3,9 +3,11 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="css/dropdown.css">
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/jquery.mobile-1.4.5.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/dropdown.js"></script>
 </head>
 <body>
 
@@ -114,6 +116,53 @@
 	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous"> 
 		<h2>Advanced Search</h2>
 	</div>	
+	
+	<input type="text" id="AdvSearchBoxText" name="AdvSearchBoxText"><input type="button" value="Search the Database" onclick ="getBoxInfoA()">
+		
+	<p><b><u>Information entered into search box: </u></b></p>
+	<p id="AdvTyped">Info Entered Here</p>
+	
+	<SCRIPT>
+		function getBoxInfoA(){
+			document.getElementById("AdvTyped").innerHTML = document.getElementById("AdvSearchBoxText").value;
+		}
+	</SCRIPT>
+	
+	<div id="regions" class="dropdown-check-list" tabindex="100" onclick="show()">
+        <span class="anchor">Regions</span>
+        <ul class="items">
+            <label><input id=0 		type="checkbox" /> All		 					</label>
+            <label><input id=1	 	type="checkbox" /> US:Florida 					</label>
+            <label><input id=2	 	type="checkbox" /> US:East Coast				</label>
+            <label><input id=3	 	type="checkbox" /> US:Gulf Coast 				</label>
+            <label><input id=4	 	type="checkbox" /> US: West Coast & Hawaii 		</label>
+            <label><input id=5		type="checkbox" /> US: National 				</label>
+            <label><input id=6	 	type="checkbox" /> Canada 						</label>
+            <label><input id=7	 	type="checkbox" /> Latin America & Caribbean	</label>
+			<label><input id=8	 	type="checkbox" /> Europe						</label>
+			<label><input id=9	 	type="checkbox" /> Africa						</label>
+			<label><input id=10 	type="checkbox" /> Middle East					</label>
+			<label><input id=11 	type="checkbox" /> Asia & Indian Ocean			</label>
+			<label><input id=12 	type="checkbox" /> Australia & New Zealand		</label>
+			<label><input id=13 	type="checkbox" /> Pacific Islands				</label>
+			<label><input id=14 	type="checkbox" /> Global						</label>
+			<label><input id=15 	type="checkbox" /> Climate Communication		</label>
+        </ul>
+    </div>
+	<p></P>
+	<div id="PC" class="dropdown-check-list" tabindex="100" onclick="showNext()">
+        <span class="anchor"># Pages</span>
+        <ul class="items">
+            <label><input id=0 		type="checkbox" /> All		 	</label>
+            <label><input id=1	 	type="checkbox" /> Under 100 	</label>
+            <label><input id=2	 	type="checkbox" /> 100 - 150	</label>
+            <label><input id=3	 	type="checkbox" /> 150 - 200	</label>
+            <label><input id=4	 	type="checkbox" /> 200 - 250	</label>
+            <label><input id=5		type="checkbox" /> Over	 250	</label>
+        </ul>
+    </div>
+<script type="text/javascript" src="js/dropdown.js"></script>
+	
 </div>
 
 </body>

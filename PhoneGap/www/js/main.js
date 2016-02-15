@@ -233,5 +233,3 @@ $(document).on("pageinit", "#search", function () {
 
 
 
-
-
