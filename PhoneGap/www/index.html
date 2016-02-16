@@ -7,7 +7,7 @@
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/jquery.mobile-1.4.5.min.js"></script>
 <script src="js/main.js"></script>
-<script src="js/dropdown.js"></script>
+<script src="js/search.js"></script>
 </head>
 <body>
 
@@ -99,17 +99,13 @@
 	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous"> 
 		<h2>Basic Search</h2>
 	</div>	
-
+	
 	<input type="text" id="SearchBoxText" name="SearchBoxText"><input type="button" value="Search the Database" onclick ="getBoxInfo()">
 		
 	<p><b><u>Information entered into search box: </u></b></p>
 	<p id="Typed"> </p>
+	<script type="text/javascript" src="js/search.js"></script>
 	
-	<SCRIPT>
-		function getBoxInfo(){
-			document.getElementById("Typed").innerHTML = document.getElementById("SearchBoxText").value;
-		}
-	</SCRIPT>		
 </div>
 
 <div data-role="page" id="advancedSearch" data-dom-cache = "false">
@@ -117,18 +113,12 @@
 		<h2>Advanced Search</h2>
 	</div>	
 	
-	<input type="text" id="AdvSearchBoxText" name="AdvSearchBoxText"><input type="button" value="Search the Database" onclick ="getBoxInfoA()">
+	<input type="text" id="AdvSearchBoxText" name="AdvSearchBoxText"><input type="button" value="Search the Database" onclick ="getBoxInfo()">
 		
 	<p><b><u>Information entered into search box: </u></b></p>
 	<p id="AdvTyped">Info Entered Here</p>
-	
-	<SCRIPT>
-		function getBoxInfoA(){
-			document.getElementById("AdvTyped").innerHTML = document.getElementById("AdvSearchBoxText").value;
-		}
-	</SCRIPT>
-	
-	<div id="regions" class="dropdown-check-list" tabindex="100" onclick="show()">
+		
+	<div id="regions" class="dropdown-check-list" tabindex="100">
         <span class="anchor">Regions</span>
         <ul class="items">
             <label><input id=0 		type="checkbox" /> All		 					</label>
@@ -149,9 +139,11 @@
 			<label><input id=15 	type="checkbox" /> Climate Communication		</label>
         </ul>
     </div>
+
 	<p></P>
-	<div id="PC" class="dropdown-check-list" tabindex="100" onclick="showNext()">
-        <span class="anchor"># Pages</span>
+	
+	<div id="PC" class="dropdown-check-list" tabindex="100">
+        <span class="anchor">Page Count</span>
         <ul class="items">
             <label><input id=0 		type="checkbox" /> All		 	</label>
             <label><input id=1	 	type="checkbox" /> Under 100 	</label>
@@ -161,8 +153,7 @@
             <label><input id=5		type="checkbox" /> Over	 250	</label>
         </ul>
     </div>
-<script type="text/javascript" src="js/dropdown.js"></script>
-	
+	<script type="text/javascript" src="js/search.js"></script>
 </div>
 
 </body>
