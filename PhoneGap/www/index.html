@@ -55,7 +55,6 @@
 	</div>
 </div> 
 
-
 <div data-role="page" id="pdfdetails">
 	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous">
 		<h2>Document Details</h2>
@@ -108,6 +107,7 @@
 	
 </div>
 
+<!-- http://stackoverflow.com/questions/19206919/how-to-create-checkbox-inside-dropdown -->
 <div data-role="page" id="advancedSearch" data-dom-cache = "false">
 	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous"> 
 		<h2>Advanced Search</h2>
@@ -118,25 +118,30 @@
 	<p><b><u>Information entered into search box: </u></b></p>
 	<p id="AdvTyped">Info Entered Here</p>
 		
+	<p></p>	
+		
+	<p><b><u>All regions? </u></b></p>
+	<p id="AR">NA</p>
+	
 	<div id="regions" class="dropdown-check-list" tabindex="100">
-        <span class="anchor">Regions</span>
+        <span class="anchor">Region(s)</span>
         <ul class="items">
-            <label><input id=0 		type="checkbox" /> All		 					</label>
-            <label><input id=1	 	type="checkbox" /> US:Florida 					</label>
-            <label><input id=2	 	type="checkbox" /> US:East Coast				</label>
-            <label><input id=3	 	type="checkbox" /> US:Gulf Coast 				</label>
-            <label><input id=4	 	type="checkbox" /> US: West Coast & Hawaii 		</label>
-            <label><input id=5		type="checkbox" /> US: National 				</label>
-            <label><input id=6	 	type="checkbox" /> Canada 						</label>
-            <label><input id=7	 	type="checkbox" /> Latin America & Caribbean	</label>
-			<label><input id=8	 	type="checkbox" /> Europe						</label>
-			<label><input id=9	 	type="checkbox" /> Africa						</label>
-			<label><input id=10 	type="checkbox" /> Middle East					</label>
-			<label><input id=11 	type="checkbox" /> Asia & Indian Ocean			</label>
-			<label><input id=12 	type="checkbox" /> Australia & New Zealand		</label>
-			<label><input id=13 	type="checkbox" /> Pacific Islands				</label>
-			<label><input id=14 	type="checkbox" /> Global						</label>
-			<label><input id=15 	type="checkbox" /> Climate Communication		</label>
+            <label><input id=0 		type="checkbox" onclick="addQueryOptions(this.id)"/> All		 					</label>
+            <label><input id=1	 	type="checkbox" onclick="addQueryOptions(this.id)"/> US:Florida 					</label>
+            <label><input id=2	 	type="checkbox" onclick="addQueryOptions(this.id)"/> US:East Coast				</label>
+            <label><input id=3	 	type="checkbox" onclick="addQueryOptions(this.id)"/> US:Gulf Coast 				</label>
+            <label><input id=4	 	type="checkbox" onclick="addQueryOptions(this.id)"/> US: West Coast & Hawaii 		</label>
+            <label><input id=5		type="checkbox" onclick="addQueryOptions(this.id)"/> US: National 				</label>
+            <label><input id=6	 	type="checkbox" onclick="addQueryOptions(this.id)"/> Canada 						</label>
+            <label><input id=7	 	type="checkbox" onclick="addQueryOptions(this.id)"/> Latin America & Caribbean	</label>
+			<label><input id=8	 	type="checkbox" onclick="addQueryOptions(this.id)"/> Europe						</label>
+			<label><input id=9	 	type="checkbox" onclick="addQueryOptions(this.id)"/> Africa						</label>
+			<label><input id=10 	type="checkbox" onclick="addQueryOptions(this.id)"/> Middle East					</label>
+			<label><input id=11 	type="checkbox" onclick="addQueryOptions(this.id)"/> Asia & Indian Ocean			</label>
+			<label><input id=12 	type="checkbox" onclick="addQueryOptions(this.id)"/> Australia & New Zealand		</label>
+			<label><input id=13 	type="checkbox" onclick="addQueryOptions(this.id)"/> Pacific Islands				</label>
+			<label><input id=14 	type="checkbox" onclick="addQueryOptions(this.id)"/> Global						</label>
+			<label><input id=15 	type="checkbox" onclick="addQueryOptions(this.id)"/> Climate Communication		</label>
         </ul>
     </div>
 
@@ -145,14 +150,17 @@
 	<div id="PC" class="dropdown-check-list" tabindex="100">
         <span class="anchor">Page Count</span>
         <ul class="items">
-            <label><input id=0 		type="checkbox" /> All		 	</label>
-            <label><input id=1	 	type="checkbox" /> Under 100 	</label>
-            <label><input id=2	 	type="checkbox" /> 100 - 150	</label>
-            <label><input id=3	 	type="checkbox" /> 150 - 200	</label>
-            <label><input id=4	 	type="checkbox" /> 200 - 250	</label>
-            <label><input id=5		type="checkbox" /> Over	 250	</label>
+            <label><input id=16 	type="checkbox" onclick="addQueryOptions(this.id)"/> All		</label>
+            <label><input id=17		type="checkbox" onclick="addQueryOptions(this.id)"/> Under 100 	</label>
+            <label><input id=18	 	type="checkbox" onclick="addQueryOptions(this.id)"/> 100 - 150	</label>
+            <label><input id=19	 	type="checkbox" onclick="addQueryOptions(this.id)"/> 150 - 200	</label>
+            <label><input id=20	 	type="checkbox" onclick="addQueryOptions(this.id)"/> 200 - 250	</label>
+            <label><input id=21		type="checkbox" onclick="addQueryOptions(this.id)"/> Over 250	</label>
         </ul>
     </div>
+	
+	<p></P>
+	
 	<script type="text/javascript" src="js/search.js"></script>
 </div>
 

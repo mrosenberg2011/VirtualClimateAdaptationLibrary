@@ -229,4 +229,20 @@ $(document).on("pageinit", "#search", function () {
 });
 
 
+$(document).on("pageinit", "#advancedSearch", function () {
+    //set up string for adding <li/>
+    var li = '';
+    //container for $li to be added
+        //add the <li> to "li" variable
+        //note the use of += in the variable
+        //meaning I'm adding to the existing data. not replacing it.
+        //store index value in array as id of the <a> tag
+        li += '<li><a href="#basicSearch" id="basicSearch" class="view">Basic Search</a></li>' +
+				'<li><a href="#advancedSearch" id="advancedSearch" class="view">Advanced Search</a></li>';
+		//append list to ul
+		$("#advancedSearchlist").append(li).listview("refresh");
+        //refresh list to enhance its styling.
+});
+
+
 
