@@ -2,28 +2,31 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
-<link rel="stylesheet" href="css/dropdown.css">
+<link rel="stylesheet" href="css/vcal_custom_v2.min.css">
+<link rel="stylesheet" href="css/jquery.mobile.icons.min.css">
+<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.css" /> 
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/jquery.mobile-1.4.5.min.js"></script>
 <script src="js/main.js"></script>
-<script src="js/search.js"></script>
 </head>
 <body>
 
 <div data-role="page" id="mainmenu">
-	<div data-role="main" class="ui-content">
-		<h2>Virtual Climate Adaptation Library</h2>
+	<div id="logo">
+		<img src="img/logo.png" alt="Virtual CLimate Adaptation Library" style="width: 100%; height: auto; padding:100; display: block;">
 	</div>
 	
 	<div data-role ="content">
-		<ul data-role="listview" id ="menulist" data-inset="true">
+		<ul data-role="listview" id ="menulist">
 		</ul>
 	</div>
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
 </div> 
 
 <div data-role="page" id="browse" data-dom-cache = "false">
-	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Back">
 		<h2>Region</h2>
 	</div>
 	
@@ -31,10 +34,14 @@
 		<ul data-role="listview" id ="regionlist">
 		</ul>
 	</div>
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
 </div> 
 
+
 <div data-role="page" id="subregions" data-dom-cache = "false">
-	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Back">
 		<h2>Subregion</h2>
 	</div>
 	
@@ -42,21 +49,28 @@
 		<ul data-role="listview" id ="subregionList" class="list">
 		</ul>
 	</div>
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
 </div> 
 
 <div data-role="page" id="documents" data-dom-cache = "false">
-	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Back">
 		<h2>Documents</h2>
 	</div>
 	
-	<div data-role ="content">
-		<ul data-role="listview" id ="documentsList" class="list">
+	<div data-role ="content" >
+		<ul data-role="listview" id ="documentsList" class="list" data-filter="true">
 		</ul>
 	</div>
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
 </div> 
 
+
 <div data-role="page" id="pdfdetails">
-	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Back">
 		<h2>Document Details</h2>
 	</div>
 	
@@ -72,97 +86,107 @@
 		<p id = "abstracttext" class = "abs" >
 		</p>
     </div>
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
 </div>
 
+
+
+<div data-role="page" id="rss">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Back">
+		<h1>RSS Feed</h1>
+	</div>
+
+	<div data-role="content"> 
+		<ul id="linksList" data-role="listview" data-inset="true"></ul>
+	</div>
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
+</div>
+
+<div data-role="page" id="contentPage">
+
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Back">
+    <h1>Test</h1>
+	</div>
+
+	<div data-role="content" id="entryText">
+	</div>
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
+</div>
+
+
+
 <div data-role="page" id="about">
-	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous"> 
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Back"> 
 		<h2>About</h2>
 	</div>
 	<div data-role ="content" id = "abouttext" class = "text">
 	</div>
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
 </div> 
 
 <div data-role="page" id="search" data-dom-cache = "false">
-	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous"> 
-		<h2> </h2>
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Back"> 
+		<h2> Search </h2>
 	</div>	
 	
 	<div data-role ="content">
-		<ul data-role="listview" id ="searchlist" data-inset="true">
+
+		<label for="search-basic">Search For:</label>
+		<input type="text" class = 'textbox' name="search" id="search-basic" value="min 3 charcters" onfocus="if(this.value=='min 3 charcters') this.value='';">
+		<input type="submit" name="submit" id="submit" value="Submit">
+		<div data-role="collapsible" id="search_regions" data-collapsed="true" data-collapsed-icon="arrow-l" data-expanded-icon="arrow-d" data-iconpos="right">
+        	<h3>Regions To Search In</h3>
+			<div data-role ="content" id = "regions_check" class = "checkboxes">
+			</div> 
+    </div>
+		
+	</div>
+	
+	
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
+</div>
+
+
+<div data-role="page" id="search_results" data-dom-cache = "false">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Back">
+		<h2>Search Results</h2>
+	</div>
+	
+	<div data-role ="content" >
+		<ul data-role="listview" id ="resultList" class="list">
 		</ul>
 	</div>
-</div>
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
+</div> 
 
-<!-- Info here http://www.textfixer.com/tutorials/html-search-box.php -->
-<div data-role="page" id="basicSearch" data-dom-cache = "false">
-	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous"> 
-		<h2>Basic Search</h2>
-	</div>	
-	
-	<input type="text" id="SearchBoxText" name="SearchBoxText"><input type="button" value="Search the Database" onclick ="getBoxInfo()">
-		
-	<p><b><u>Information entered into search box: </u></b></p>
-	<p id="Typed"> </p>
-	<script type="text/javascript" src="js/search.js"></script>
-	
-</div>
 
-<!-- http://stackoverflow.com/questions/19206919/how-to-create-checkbox-inside-dropdown -->
-<div data-role="page" id="advancedSearch" data-dom-cache = "false">
-	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Previous"> 
-		<h2>Advanced Search</h2>
-	</div>	
+<div data-role="page" id="new" data-dom-cache = "false">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Back">
+		<h2>Newest 20 Submitions</h2>
+	</div>
 	
-	<input type="text" id="AdvSearchBoxText" name="AdvSearchBoxText"><input type="button" value="Search the Database" onclick ="getBoxInfo()">
-		
-	<p><b><u>Information entered into search box: </u></b></p>
-	<p id="AdvTyped">Info Entered Here</p>
-		
-	<p></p>	
-		
-	<p><b><u>All regions? </u></b></p>
-	<p id="AR">NA</p>
-	
-	<div id="regions" class="dropdown-check-list" tabindex="100">
-        <span class="anchor">Region(s)</span>
-        <ul class="items">
-            <label><input id=0 		type="checkbox" onclick="addQueryOptions(this.id)"/> All		 					</label>
-            <label><input id=1	 	type="checkbox" onclick="addQueryOptions(this.id)"/> US:Florida 					</label>
-            <label><input id=2	 	type="checkbox" onclick="addQueryOptions(this.id)"/> US:East Coast				</label>
-            <label><input id=3	 	type="checkbox" onclick="addQueryOptions(this.id)"/> US:Gulf Coast 				</label>
-            <label><input id=4	 	type="checkbox" onclick="addQueryOptions(this.id)"/> US: West Coast & Hawaii 		</label>
-            <label><input id=5		type="checkbox" onclick="addQueryOptions(this.id)"/> US: National 				</label>
-            <label><input id=6	 	type="checkbox" onclick="addQueryOptions(this.id)"/> Canada 						</label>
-            <label><input id=7	 	type="checkbox" onclick="addQueryOptions(this.id)"/> Latin America & Caribbean	</label>
-			<label><input id=8	 	type="checkbox" onclick="addQueryOptions(this.id)"/> Europe						</label>
-			<label><input id=9	 	type="checkbox" onclick="addQueryOptions(this.id)"/> Africa						</label>
-			<label><input id=10 	type="checkbox" onclick="addQueryOptions(this.id)"/> Middle East					</label>
-			<label><input id=11 	type="checkbox" onclick="addQueryOptions(this.id)"/> Asia & Indian Ocean			</label>
-			<label><input id=12 	type="checkbox" onclick="addQueryOptions(this.id)"/> Australia & New Zealand		</label>
-			<label><input id=13 	type="checkbox" onclick="addQueryOptions(this.id)"/> Pacific Islands				</label>
-			<label><input id=14 	type="checkbox" onclick="addQueryOptions(this.id)"/> Global						</label>
-			<label><input id=15 	type="checkbox" onclick="addQueryOptions(this.id)"/> Climate Communication		</label>
-        </ul>
-    </div>
+	<div data-role ="content">
+		<ul data-role="listview" id ="newlist">
+		</ul>
+	</div>
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
+</div> 
 
-	<p></P>
-	
-	<div id="PC" class="dropdown-check-list" tabindex="100">
-        <span class="anchor">Page Count</span>
-        <ul class="items">
-            <label><input id=16 	type="checkbox" onclick="addQueryOptions(this.id)"/> All		</label>
-            <label><input id=17		type="checkbox" onclick="addQueryOptions(this.id)"/> Under 100 	</label>
-            <label><input id=18	 	type="checkbox" onclick="addQueryOptions(this.id)"/> 100 - 150	</label>
-            <label><input id=19	 	type="checkbox" onclick="addQueryOptions(this.id)"/> 150 - 200	</label>
-            <label><input id=20	 	type="checkbox" onclick="addQueryOptions(this.id)"/> 200 - 250	</label>
-            <label><input id=21		type="checkbox" onclick="addQueryOptions(this.id)"/> Over 250	</label>
-        </ul>
-    </div>
-	
-	<p></P>
-	
-	<script type="text/javascript" src="js/search.js"></script>
-</div>
+
 
 </body>
 </html>

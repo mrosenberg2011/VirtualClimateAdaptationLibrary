@@ -78,6 +78,12 @@ h1 {
     text-align:center;
 }
 
+#logo {
+	padding:0px;
+	width: 100%;
+	height: auto;
+}
+
 .event {
     border-radius:4px;
     -webkit-border-radius:4px;
