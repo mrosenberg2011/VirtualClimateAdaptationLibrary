@@ -10,6 +10,7 @@ $(document).on("collapsibleexpand", "[data-role=collapsible]", function () {
     var position = $(this).offset().top;
     $.mobile.silentScroll(position);
 });
+<<<<<<< HEAD
 
 function closeMeNow() {
     navigator.app.exitApp();
@@ -33,6 +34,11 @@ document.addEventListener("exitButton", function(){
 
 $(document).on("pageinit", "#mainmenu", function () {
 	
+=======
+
+$(document).on("pageinit", "#mainmenu", function () {
+
+>>>>>>> 73d04d85926e43cfe13fe6be9d03ed32a8e101a1
 
     //set up string for adding <li/>
     var li = '';
@@ -41,21 +47,41 @@ $(document).on("pageinit", "#mainmenu", function () {
         //note the use of += in the variable
         //meaning I'm adding to the existing data. not replacing it.
         //store index value in array as id of the <a> tag
+<<<<<<< HEAD
         li += '<a href="#browse" id="browse" class="ui-btn ui-icon-eye ui-btn-icon-left" style = "padding-left: 1em;">Browse</a>' +
 				'<a href="#search" id="search" class="ui-btn ui-icon-search ui-btn-icon-left" style = "padding-left: 1em;">Search</a>' +
 				'<a href="#new" id="new" class="ui-btn ui-icon-recycle ui-btn-icon-left" style = "padding-left: 1em;">New Submissions</a>' +
 				'<a href="#favorites" id="favorites" class="ui-btn ui-icon-star ui-btn-icon-left" style = "padding-left: 1em;">Favorites</a>' +
 				'<a href="#rss" id="rss" class="ui-btn ui-icon-comment ui-btn-icon-left" style = "padding-left: 1em;">RSS feed</a>' +
 				'<a href="#about" id="about" class="ui-btn ui-icon-info ui-btn-icon-left" style = "padding-left: 1em;">About</a>';
+=======
+        li += '<a href="#browse" id="browse" class="ui-btn ui-icon-eye ui-btn-icon-left">Browse</a>' +
+				'<a href="#search" id="search" class="ui-btn ui-icon-search ui-btn-icon-left">Search</a>' +
+				'<a href="#new" id="new" class="ui-btn ui-icon-recycle ui-btn-icon-left">New Submissions</a>' +
+				'<a href="#" id="favorites" class="ui-btn ui-icon-star ui-btn-icon-left">Favorites</a>' +
+				'<a href="#rss" id="rss" class="ui-btn ui-icon-comment ui-btn-icon-left">RSS feed</a>' +
+				'<a href="#about" id="about" class="ui-btn ui-icon-info ui-btn-icon-left">About</a>' +
+				'<a href="#exit" id="exit" class="ui-btn ui-icon-delete ui-btn-icon-left">Exit</a>';
+>>>>>>> 73d04d85926e43cfe13fe6be9d03ed32a8e101a1
 		//append list to ul
 		$("#menulist").append(li).listview("refresh");
         //refresh list to enhance its styling.
 		
+<<<<<<< HEAD
+=======
+        $(document).on('click', '#exit', function () {
+            navigator.app.exitApp();   
+		});
+>>>>>>> 73d04d85926e43cfe13fe6be9d03ed32a8e101a1
 });
 
 $(document).on("pageinit", "#browse", function () {
    $.ajax({
+<<<<<<< HEAD
 		url: 'http://projects.fit.edu/caladmin/services/getregions.php',
+=======
+		url: 'http://www.test-fit.net/services/getregions.php',
+>>>>>>> 73d04d85926e43cfe13fe6be9d03ed32a8e101a1
 		dataType: 'jsonp',
 		cache: false,
 		jsonp: 'jsoncallback',
@@ -99,7 +125,11 @@ $(document).on("pagebeforeshow", "#subregions", function () {
     var info = $(this).data("info");
     //string to put HTML in
     $.ajax({
+<<<<<<< HEAD
 		url: 'http://projects.fit.edu/caladmin/services/getsubregions.php',
+=======
+		url: 'http://www.test-fit.net/services/getsubregions.php',
+>>>>>>> 73d04d85926e43cfe13fe6be9d03ed32a8e101a1
 		data: {reg: info},
 		dataType: 'jsonp',
 		cache: false,
@@ -112,8 +142,13 @@ $(document).on("pagebeforeshow", "#subregions", function () {
 				if (item.doc_count) {
 				count = item.doc_count;
 				}
+<<<<<<< HEAD
 				li += '<li><a href="#" id='+ item.s_key +' class="info-go">' + item.s_name + '<span class="ui-li-count">'+ count +'</span></a></li>';
 				console.log(item.r_key);
+=======
+				li += '<li><a href="#" id='+ item.s_subregionkey +' class="info-go">' + item.s_name + '<span class="ui-li-count">'+ count +'</span></a></li>';
+				console.log(item.s_regionkey);
+>>>>>>> 73d04d85926e43cfe13fe6be9d03ed32a8e101a1
 			});
 			$("#subregionList").append(li).listview("refresh").promise().done(function () {
 				//wait for append to finish - thats why you use a promise()
@@ -146,7 +181,11 @@ $(document).on("pagebeforeshow", "#documents", function (e) {
 	console.log(info);
     //string to put HTML in
     $.ajax({
+<<<<<<< HEAD
 		url: 'http://projects.fit.edu/caladmin/services/getdocuments.php',
+=======
+		url: 'http://www.test-fit.net/services/getdocuments.php',
+>>>>>>> 73d04d85926e43cfe13fe6be9d03ed32a8e101a1
 		data: {sreg: info},
 		dataType: 'jsonp',
 		cache: false,
@@ -155,8 +194,13 @@ $(document).on("pagebeforeshow", "#documents", function (e) {
 		success: function(data, status){
 			var li = '';
 			$.each(data, function(i,item){ 
+<<<<<<< HEAD
 				console.log(item.d_key);
 				li += '<li><a href="#" id= ' + item.d_key + ' class="info-go">' + item.d_title + '</a></li>';
+=======
+				console.log(item.d_id);
+				li += '<li><a href="#" id= ' + item.d_id + ' class="info-go">' + item.d_title + '</a></li>';
+>>>>>>> 73d04d85926e43cfe13fe6be9d03ed32a8e101a1
 			});
 			$("#documentsList").append(li).listview("refresh").promise().done(function () {
 				//wait for append to finish - thats why you use a promise()
@@ -205,7 +249,11 @@ $(document).on("pagebeforeshow", "#pdfdetails", function () {
     var info = $(this).data("info");
 	console.log(info);
     $.ajax({
+<<<<<<< HEAD
 		url: 'http://projects.fit.edu/caladmin/services/getdocdetails.php',
+=======
+		url: 'http://www.test-fit.net/services/getdocdetails.php',
+>>>>>>> 73d04d85926e43cfe13fe6be9d03ed32a8e101a1
 		data: {did: info},
 		dataType: 'jsonp',
 		cache: false,
@@ -217,6 +265,12 @@ $(document).on("pagebeforeshow", "#pdfdetails", function () {
 						'<li>Author: ' + data[0].d_authors + '</li>' + 
 						'<li>Region: ' + data[0].r_name + '</li>' +
 						'<li>Subregion: ' + data[0].s_name + '</li>';
+<<<<<<< HEAD
+=======
+			if (data[0].d_document_origin) {
+				details += '<li>Origin: ' + data[0].d_document_origin + '</li>';
+			}	
+>>>>>>> 73d04d85926e43cfe13fe6be9d03ed32a8e101a1
 			if (data[0].d_page_count) {
 				details += '<li>Pages: ' + data[0].d_page_count + '</li>';
 			}
@@ -229,11 +283,17 @@ $(document).on("pagebeforeshow", "#pdfdetails", function () {
 			$("#detailsList").append(details).listview("refresh");
 			
 			var buttons = '';
+<<<<<<< HEAD
 			link = 'http:'+ data[0].d_document_origin.replace(/\\/g,"/");
 			console.log(link);
 			buttons += 	'<br><a href="http:'+ link + '" class="ui-btn ui-btn-inline">Download</a>' +
 						'<a href="https://docs.google.com/viewer?url='+ link+ '" class="ui-btn ui-btn-inline">Open</a>' +
 						'<a href="#" class="ui-btn ui-btn-inline ui-state-disabled">Add to Favorites</a>';
+=======
+			buttons += 	'<br><a href="'+ data[0].d_document + '" class="ui-btn ui-btn-inline">Download</a>' +
+						'<a href="https://docs.google.com/viewer?url='+ data[0].d_document+ '" class="ui-btn ui-btn-inline">Open</a>' +
+						'<a href="#" class="ui-btn ui-btn-inline">Add to Favorites</a>';
+>>>>>>> 73d04d85926e43cfe13fe6be9d03ed32a8e101a1
 						
 			$("#buttons").append(buttons);
 			
@@ -252,7 +312,11 @@ $(document).on("pageinit", "#rss", function () {
 //EDIT THESE LINES
 //Title of the blog
 //RSS url
+<<<<<<< HEAD
 var RSS = "http://rss.sciam.com/sciam/energy-and-sustainability";
+=======
+var RSS = "http://feedproxy.google.com/RaymondCamdensColdfusionBlog";
+>>>>>>> 73d04d85926e43cfe13fe6be9d03ed32a8e101a1
 //Stores entries
 var entries = [];
 var selectedEntry = "";
@@ -261,6 +325,7 @@ var selectedEntry = "";
 $(".contentLink").on("click", function() {
 	console.log("clicked");
     selectedEntry = $(this).data("entryid");
+<<<<<<< HEAD
 });
 
 //Listen for main page
@@ -497,10 +562,243 @@ $(document).on("pageinit", "#new", function () {
 $(document).on("pageinit", "#favorites", function () {
    window.localStorage.setItem("key", "value");
    alert(window.localStorage.getItem("key"));
+=======
 });
 
+//Listen for main page
 
+
+	$.get(RSS, {}, function(res, code) {
+        var xml = $(res);
+        var items = xml.find("item");
+        $.each(items, function(i, v) {
+            entry = { 
+                    title:$(v).find("title").text(), 
+                    link:$(v).find("link").text(), 
+                    description:$.trim($(v).find("description").text())
+                    };
+            entries.push(entry);
+        });
+
+        //now draw the list
+        var s = '';
+        $.each(entries, function(i, v) {
+            s += '<li><a href="#contentPage" id= ' + i + ' class="info-go">' + v.title + '</a></li>';
+        });
+        $("#linksList").append(s);
+        $("#linksList").listview("refresh").promise().done(function () {
+				//wait for append to finish - thats why you use a promise()
+				//done() will run after append is done
+				//add the click event for the redirection to happen to #details-page
+				$(this).on("click", ".info-go", function (e) {
+					e.preventDefault();
+					e.stopImmediatePropagation();
+					//store the information in the next page's data
+					$("#contentPage").data("info", this.id);
+					//change the page # to second page. 
+					//Now the URL in the address bar will read index.html#details-page
+					//where #details-page is the "id" of the second page
+					//we're gonna redirect to that now using changePage() method
+					$.mobile.pageContainer.pagecontainer("change", "#contentPage");;
+				});
+			});;
+    });
+
+
+
+//Listen for the content page to load 
+$("#contentPage").on("pageshow", function(prepage) {
+//Set the title 
+	var info = $(this).data("info")
+	$("h1", this).text(entries[info].title);
+	console.log(selectedEntry);
+	var contentHTML = "";
+	contentHTML += entries[info].description; 
+	contentHTML += '<p/><a href="'+entries[info].link + '">Read Entry on Site</a>';
+	$("#entryText",this).html(contentHTML); });
+
+>>>>>>> 73d04d85926e43cfe13fe6be9d03ed32a8e101a1
+});
+
+$(document).on("pageinit", "#search", function () {
+		
+		$.ajax({
+		url: 'http://www.test-fit.net/services/getregions.php',
+		dataType: 'jsonp',
+		cache: false,
+		jsonp: 'jsoncallback',
+		timeout: 5000,
+		success: function(info, status){
+			var li = '<label><input type="checkbox" class = "regions" id="0" value = "0"/>ANY</label>';
+			$.each(info, function (i, item) {
+				//add the <li> to "li" variable
+				//note the use of += in the variable
+				//meaning I'm adding to the existing data. not replacing it.
+				//store index value in array as id of the <a> tag
+				li += '<label><input type="checkbox" class = "regions" id="'+ item.r_regionkey + '" value= "' + item.r_regionkey + '"   />'+ item.r_name +'</label>';
+			});
+			$('#regions_check').append(li);
+			$('[type=checkbox]').checkboxradio().trigger('create');
+			$('#regions_check').controlgroup().trigger('create');
+			
+			$(".regions").on("change", function () {
+				if ($(this).is(":checked") && this.id == "0") {
+					$('.regions').prop('checked', false).checkboxradio("refresh");
+					$(this).prop('checked', true).checkboxradio("refresh");
+				} else {
+					$('#0').prop('checked', false).checkboxradio("refresh");
+			}
+    });
+		},
+		error: function(){
+			$("#regionlist").text('There was an error loading the data.');
+		}
+	});
+	
+	$('#submit').on("click",function() {
+		var input = document.getElementById("search-basic").value;
+		console.log(input);
+		if(input.length < 3){
+			alert("Make sure your search input is at least 3 characters long");
+		}
+		else{
+			var input_arr = input.replace(/(\b(\w{1,2})\b(\W|$))/g,'').split(/\s+/);
+			var input_arr1 = input_arr.filter(function(v){return v!==''});
+
+<<<<<<< HEAD
 $('#exitButton').on('click',function() { 
 navigator.app.exitApp(); 
 }); 
+=======
+			console.log(input_arr1);
+			var checked = [];
+			console.log(input);
+			$("input[class='regions']:checked").each(function ()
+			{
+				checked.push(parseInt($(this).val()));
+			});
+			console.log(checked);
+			
+			var query = '(';
+			if(checked.length > 0 && checked[0] != 0) {
+				
+				for(i = 0; i < checked.length; i++) {
+					query += "d_regionkey = '" + checked[i] +"'";
+					if (i+1 != checked.length) {
+						query += ' OR ';
+					} else {
+						query += ') ';
+					}
+				}
+				query += 'AND (';
+			}
+			
+			for(i = 0; i < input_arr1.length; i++) {
+				query += "((d_title LIKE '%" + input_arr1[i] + "%') OR ";
+				query += "(d_authors LIKE '%" + input_arr1[i] + "%') OR ";
+				query += "(d_keywords  LIKE '%" + input_arr1[i] + "%'))";
+				
+				
+				if (i+1 != input_arr1.length) {
+					query += ' OR ';
+				} else {
+					query += ') ';
+				}
+			}
+			console.log(query);
+			
+			$.ajax({
+			
+			url: 'http://www.test-fit.net/services/getsearchresult.php',
+			data: {q: query},
+			dataType: 'jsonp',
+			cache: false,
+			jsonp: 'jsoncallback',
+			timeout: 5000,
+			success: function(data, status){
+				console.log(data[0].d_title);
+				$("#search_results").data("info", data);
+				$.mobile.pageContainer.pagecontainer("change", "#search_results");
+			},
+			error: function(){
+				$("#documentsList").text('There was an error loading the data.');
+			}
+		});
+	
+		console.log(query);
+		}
+		}); 
+	
+});
+
+$(document).on("pagebeforeshow", "#search_results", function (e) {
+	e.stopImmediatePropagation();
+    //get from data - you put this here when the "a" wa clicked in the previous page
+	$( ".list" ).empty();
+    var data = $(this).data("info");
+	console.log(data);
+    //string to put HTML in
+		var li = '';
+		$.each(data, function(i,item){ 
+			console.log(item.d_id);
+			li += '<li><a href="#" id= ' + item.d_id + ' class="info-go">' + item.d_title + '</a></li>';
+		});
+		$("#resultList").append(li).listview("refresh").promise().done(function () {
+			//wait for append to finish - thats why you use a promise()
+			//done() will run after append is done
+			//add the click event for the redirection to happen to #details-page
+			$(this).on("click", ".info-go", function (e) {
+				e.preventDefault();
+				e.stopImmediatePropagation();
+				//store the information in the next page's data
+				$("#pdfdetails").data("info", this.id);
+				//change the page # to second page. 
+				//Now the URL in the address bar will read index.html#details-page
+				//where #details-page is the "id" of the second page
+				//we're gonna redirect to that now using changePage() method
+				$.mobile.pageContainer.pagecontainer("change", "#pdfdetails");
+			});
+		});
+});
+
+$(document).on("pageinit", "#new", function () {
+   $.ajax({
+		url: 'http://www.test-fit.net/services/getnew.php',
+		dataType: 'jsonp',
+		cache: false,
+		jsonp: 'jsoncallback',
+		timeout: 5000,
+		success: function(info, status){
+			var li = '';
+			$.each(info, function (i, item) {
+				//add the <li> to "li" variable
+				//note the use of += in the variable
+				//meaning I'm adding to the existing data. not replacing it.
+				//store index value in array as id of the <a> tag
+				li += '<li><a href="#" id="' + item.d_regionkey + '" class="info-go">' + item.d_title + ' <p class="ui-li-aside">Uploaded: '+ item.d_submit_date +'</p> </a></li>';
+			});
+    //append list to ul
+			$("#newlist").append(li).listview("refresh").promise().done(function () {
+				//wait for append to finish - thats why you use a promise()
+				//done() will run after append is done
+				//add the click event for the redirection to happen to #details-page
+				$(this).on("click", ".info-go", function (e) {
+					e.preventDefault();
+					e.stopImmediatePropagation();
+					//store the information in the next page's data
+					$("#subregions").data("info", this.id);
+					//change the page # to second page. 
+					//Now the URL in the address bar will read index.html#details-page
+					//where #details-page is the "id" of the second page
+					//we're gonna redirect to that now using changePage() method
+					$.mobile.pageContainer.pagecontainer("change", "#subregions");
+				});
+			});
+		},
+		error: function(){
+			$("#newlist").text('There was an error loading the data.');
+		}
+	});
+});
+>>>>>>> 73d04d85926e43cfe13fe6be9d03ed32a8e101a1
 
