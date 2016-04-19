@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/vcal_custom_v2.min.css">
+<link rel="stylesheet" href="css/jquery.mobile.icons.min.css">
+<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.css" /> 
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/main.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="mainmenu">
+	<div id="logo">
+		<img src="img/logo.png" alt="Virtual CLimate Adaptation Library" style="width: 100%; height: auto; padding:100; display: block;">
+	</div>
+	
+	<div data-role ="content">
+		<ul data-role="listview" id ="menulist">
+		</ul>
+	</div>
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
+</div> 
+
+<div data-role="page" id="browse" data-dom-cache = "false">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Back">
+		<h2>Region</h2>
+	</div>
+	
+	<div data-role ="content">
+		<ul data-role="listview" id ="regionlist">
+		</ul>
+	</div>
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
+</div> 
+
+
+<div data-role="page" id="subregions" data-dom-cache = "false">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Back">
+		<h2>Subregion</h2>
+	</div>
+	
+	<div data-role ="content">
+		<ul data-role="listview" id ="subregionList" class="list">
+		</ul>
+	</div>
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
+</div> 
+
+<div data-role="page" id="documents" data-dom-cache = "false">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Back">
+		<h2>Documents</h2>
+	</div>
+	
+	<div data-role ="content" >
+		<ul data-role="listview" id ="documentsList" class="list" data-filter="true">
+		</ul>
+	</div>
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
+</div> 
+
+
+<div data-role="page" id="pdfdetails">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Back">
+		<h2>Document Details</h2>
+	</div>
+	
+	<div data-role ="content" id = "pdfcontent" class = "text">
+		<ul data-role="listview" id ="detailsList" class="list">
+		</ul>
+	</div> 
+	<div data-role ="content" id = "buttons" class = "buttons">
+	</div> 
+	
+	<div data-role="collapsible" id="abstract" data-collapsed="true" data-collapsed-icon="arrow-l" data-expanded-icon="arrow-d" data-iconpos="right">
+        <h3>Abstract</h3>
+		<p id = "abstracttext" class = "abs" >
+		</p>
+    </div>
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
+</div>
+
+
+
+<div data-role="page" id="rss">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Back">
+		<h1>RSS Feed</h1>
+	</div>
+
+	<div data-role="content"> 
+		<ul id="linksList" data-role="listview" data-inset="true"></ul>
+	</div>
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
+</div>
+
+<div data-role="page" id="contentPage">
+
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Back">
+    <h1>Test</h1>
+	</div>
+
+	<div data-role="content" id="entryText">
+	</div>
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
+</div>
+
+
+
+<div data-role="page" id="about">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Back"> 
+		<h2>About</h2>
+	</div>
+	<div data-role ="content" id = "abouttext" class = "text">
+	</div>
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
+</div> 
+
+<div data-role="page" id="search" data-dom-cache = "false">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Back"> 
+		<h2> Search </h2>
+	</div>	
+	
+	<div data-role ="content">
+
+		<label for="search-basic">Search For:</label>
+		<input type="text" class = 'textbox' name="search" id="search-basic" value="min 3 charcters" onfocus="if(this.value=='min 3 charcters') this.value='';">
+		<input type="submit" name="submit" id="submit" value="Submit">
+		<div data-role="collapsible" id="search_regions" data-collapsed="true" data-collapsed-icon="arrow-l" data-expanded-icon="arrow-d" data-iconpos="right">
+        	<h3>Regions To Search In</h3>
+			<div data-role ="content" id = "regions_check" class = "checkboxes">
+			</div> 
+    </div>
+		
+	</div>
+	
+	
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
+</div>
+
+
+<div data-role="page" id="search_results" data-dom-cache = "false">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Back">
+		<h2>Search Results</h2>
+	</div>
+	
+	<div data-role ="content" >
+		<ul data-role="listview" id ="resultList" class="list">
+		</ul>
+	</div>
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
+</div> 
+
+
+<div data-role="page" id="new" data-dom-cache = "false">
+	<div data-role="header" data-position="fixed" class="ui-content" data-add-back-btn="true" data-back-btn-text="Back">
+		<h2>Newest 20 Submitions</h2>
+	</div>
+	
+	<div data-role ="content">
+		<ul data-role="listview" id ="newlist">
+		</ul>
+	</div>
+	<div data-role="footer"> 
+		<center><img src="img/FIT.png" alt="FIT" height="40" width="40" align="middle"></center>
+	</div> 
+</div> 
+
+
+
+</body>
+</html>
