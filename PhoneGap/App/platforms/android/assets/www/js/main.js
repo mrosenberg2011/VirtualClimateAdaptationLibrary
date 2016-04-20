@@ -538,7 +538,7 @@ $(document).on("pagebeforeshow", "#favorites", function () {
 			timeout: 5000,
 			success: function(data, status){
 				console.log("sucess");
-				li = '<li><a href="#" id="' + data[0].d_key + '" class="info-go">' + data[0].d_title + '</a></li>';
+				li = '<li><a href="#" id="' + data[0].d_key + '" class="info-go">' + data[0].d_title + '<p>Region: '+ data[0].r_name +'<p>Subregion: '+ data[0].s_name +'</p></p> </a></li>';
 				console.log(li);	
 				$("#favlist").append(li).listview("refresh").promise().done(function () {
 				//wait for append to finish - thats why you use a promise()
