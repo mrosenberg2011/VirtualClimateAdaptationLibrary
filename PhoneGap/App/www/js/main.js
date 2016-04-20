@@ -6,30 +6,13 @@
 */
 
 
+
 $(document).on("collapsibleexpand", "[data-role=collapsible]", function () {
     var position = $(this).offset().top;
     $.mobile.silentScroll(position);
 });
 
-function closeMeNow() {
-    navigator.app.exitApp();
-}
 
-
-document.addEventListener("exitButton", function(){ 
-              navigator.notification.confirm(
-                        'Do you want to quit', 
-                        onConfirmQuit, 
-                        'QUIT TITLE', 
-                        'OK,Cancel'  
-                    );
-            }, true); 
-
-    function onConfirmQuit(button){
-       if(button == "1"){
-        navigator.app.exitApp(); 
-    }
-}
 
 $(document).on("pageinit", "#mainmenu", function () {
 	
@@ -199,8 +182,15 @@ $(document).on("pagebeforeshow", "#about", function () {
 });
 
 $(document).on("pagebeforeshow", "#pdfdetails", function () {
+    if (!window.localStorage.getItem("local")) { 
+        window.localStorage.setItem("local", "");
+    }
+    var string = window.localStorage.getItem("local");
+	var arr = string.split(",");
+    
 	$( ".abs" ).empty();
 	$( ".buttons" ).empty();
+    $( ".list" ).empty();
     //get from data - you put this here when the "a" wa clicked in the previous page
     var info = $(this).data("info");
 	console.log(info);
@@ -232,11 +222,37 @@ $(document).on("pagebeforeshow", "#pdfdetails", function () {
 			link = 'http:'+ data[0].d_document_origin.replace(/\\/g,"/");
 			console.log(link);
 			buttons += 	'<br><a href="http:'+ link + '" class="ui-btn ui-btn-inline">Download</a>' +
-						'<a href="https://docs.google.com/viewer?url='+ link+ '" class="ui-btn ui-btn-inline">Open</a>' +
-						'<a href="#" class="ui-btn ui-btn-inline ui-state-disabled">Add to Favorites</a>';
-						
-			$("#buttons").append(buttons);
+						'<a href="https://docs.google.com/viewer?url='+ link+ '" class="ui-btn ui-btn-inline">Open</a>';
+			if (arr.indexOf(data[0].d_key) == -1) { 
+                buttons += '<a name="addfav" id="addfav"  class="ui-btn ui-btn-inline">Add to Favorites</a>';
+                console.log('hehehe');
+            } else { 
+                buttons += '<a name="remfav" id="remfav" class="ui-btn ui-btn-inline">Remove from Favorites</a>';
+                console.log('hehehe2');
+            } 
+
 			
+			$("#buttons").append(buttons);
+            $('#buttons').trigger('create');
+			
+            
+        $('#addfav').on("click",function() {
+            arr.splice(0, 0, data[0].d_key);
+            string = arr.join();
+            window.localStorage.setItem("local", string);
+            $.mobile.pageContainer.pagecontainer("change", "#favorites");
+            
+		}); 
+            
+        $('#remfav').on("click",function() {
+            var index = arr.indexOf(data[0].d_key);
+            arr.splice(index, 1);
+            string = arr.join();
+            window.localStorage.setItem("local", string);
+            $.mobile.pageContainer.pagecontainer("change", "#favorites");
+		}); 
+            
+            
 			var abs = '';
 			abs = data[0].d_abstract;
 			$("#abstracttext").append(abs);
@@ -318,7 +334,8 @@ $("#contentPage").on("pageshow", function(prepage) {
 });
 
 $(document).on("pageinit", "#search", function () {
-		
+		$( ".checkboxes" ).empty();
+        $( ".textbox" ).empty();
 		$.ajax({
 		url: 'http://projects.fit.edu/caladmin/services/getregions.php',
 		dataType: 'jsonp',
@@ -375,7 +392,7 @@ $(document).on("pageinit", "#search", function () {
 			if(checked.length > 0 && checked[0] != 0) {
 				
 				for(i = 0; i < checked.length; i++) {
-					query += "d_regionkey = '" + checked[i] +"'";
+					query += "document.r_key = '" + checked[i] +"'";
 					if (i+1 != checked.length) {
 						query += ' OR ';
 					} else {
@@ -408,6 +425,9 @@ $(document).on("pageinit", "#search", function () {
 			jsonp: 'jsoncallback',
 			timeout: 5000,
 			success: function(data, status){
+                if (!data[0]) { 
+                    alert("No results");
+                }
 				console.log(data[0].d_title);
 				$("#search_results").data("info", data);
 				$.mobile.pageContainer.pagecontainer("change", "#search_results");
@@ -494,13 +514,61 @@ $(document).on("pageinit", "#new", function () {
 });
 
 
-$(document).on("pageinit", "#favorites", function () {
-   window.localStorage.setItem("key", "value");
-   alert(window.localStorage.getItem("key"));
+$(document).on("pagebeforeshow", "#favorites", function () {
+    $( ".fav" ).empty();
+	if (!window.localStorage.getItem("local")) { 
+		window.localStorage.setItem("local", "");
+	}
+	var string = window.localStorage.getItem("local");
+	var arr = string.split(",");
+        // keyname is now equal to "key"
+	
+	var li = '';	
+	for(i = 0; i < arr.length; i++) {
+		var info = arr[i];
+		console.log(info);
+		
+		
+		$.ajax({
+			url: 'http://projects.fit.edu/caladmin/services/getsingledoc.php',
+			data: {did: info},
+			dataType: 'jsonp',
+			cache: false,
+			jsonp: 'jsoncallback',
+			timeout: 5000,
+			success: function(data, status){
+				console.log("sucess");
+				li = '<li><a href="#" id="' + data[0].d_key + '" class="info-go">' + data[0].d_title + '</a></li>';
+				console.log(li);	
+				$("#favlist").append(li).listview("refresh").promise().done(function () {
+				//wait for append to finish - thats why you use a promise()
+				//done() will run after append is done
+				//add the click event for the redirection to happen to #details-page
+				$(this).on("click", ".info-go", function (e) {
+					e.preventDefault();
+					e.stopImmediatePropagation();
+					//store the information in the next page's data
+					$("#pdfdetails").data("info", this.id);
+					//change the page # to second page. 
+					//Now the URL in the address bar will read index.html#details-page
+					//where #details-page is the "id" of the second page
+					//we're gonna redirect to that now using changePage() method
+					$.mobile.pageContainer.pagecontainer("change", "#pdfdetails");
+				});
+			});
+                
+                
+                
+			},
+			error: function(){
+				$("#favlist").text('There was an error loading the data.');
+				console.log("error");
+			}
+		});
+		
+	
+	}
+	console.log(li);
+	$("#favlist").append(li).listview("refresh");
 });
-
-
-$('#exitButton').on('click',function() { 
-navigator.app.exitApp(); 
-}); 
 
